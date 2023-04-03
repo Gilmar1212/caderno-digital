@@ -52,9 +52,11 @@ form input[type="submit"]:hover{
 .anotacoes .anotacoes__title{
     color:white;
 }
-.anotacoes .anotacoes__content{
-    color:white;
-    font-size:18px;
+.anotacoes .anotacoes__content {
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    line-height: 32px;
 }
 a{
     text-decoration: none;
