@@ -1,0 +1,81 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    padding:20px;
+    background-color:rgb(102, 153, 136);
+    font-family: 'Open Sans', sans-serif;
+}
+h1{
+    text-align: center;
+    margin:20px 0;
+}
+h2,h3{
+    margin:20px 0;
+}
+h3
+form{
+    display:flex;
+    flex-direction: column;
+}
+form input, textarea {
+    width:100%;
+    margin:10px 0;
+    padding:10px 5px;
+    border:none;
+    border-radius: 25px;
+}
+textarea{
+    height:1200px;
+}
+form input[type="submit"]{
+    padding:10px 60px ;
+    cursor: pointer;
+    transition:0.5s;
+}
+form input[type="submit"]:hover{
+    background-color:lightblue;
+}
+.materias,.anotacoes--content{
+    display:flex;
+    flex-direction: column;
+    overflow-y:scroll;
+    height:200px;
+}
+.wrapper{
+    width:100%;
+    max-width:980px;
+    margin:0 auto;
+    box-sizing: border-box;
+}
+.anotacoes .anotacoes__title{
+    color:white;
+}
+.anotacoes .anotacoes__content{
+    color:white;
+    font-size:18px;
+}
+a{
+    text-decoration: none;
+    color:black;
+    background-color:white;
+    font-size:26px;
+    line-height: 50px;
+    font-weight: 700;
+    transition:0.5s;
+    padding:0 15px;
+    margin:10px 0;
+}
+a:hover{
+    background-color:black;
+    color:white;
+}
+.voltar{
+    padding:15px 20px;
+    border-radius:60px;
+}
+.materias-flex{
+    display:flex;
+    justify-content: space-between;
+}
