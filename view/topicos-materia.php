@@ -54,7 +54,13 @@ ajax.onreadystatechange = ()=>{
             
             i.setAttribute("class", "fa-solid fa-trash");            
                 let topic = document.createElement("a");
-                topic.setAttribute("href", "carrega-anotacoes.php?id="+index.id_materia);
+                topic.setAttribute("href", "carrega-anotacoes.php?id="+index.id_anotacoes);
+                topic.addEventListener("click",(e)=>{
+                    e.preventDefault;
+                    let id = topic.getAttribute("href").split("?")[1].split("=")[1];
+                    console.log(id);
+                   localStorage.setItem("id_anotacoes",id);
+                })
                 topic.innerHTML = index.assunto_anotacoes;
                 deletar.append(i);
                 topic.classList.add("materias-flex");

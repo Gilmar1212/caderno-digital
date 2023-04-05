@@ -29,8 +29,9 @@ ajax.onreadystatechange = ()=>{
         
         json.forEach((index)=>{
             let storage =localStorage.getItem("id");
+            let storageIdAnotacoes = localStorage.getItem("id_anotacoes");
             let splitedStringOcurrence = storage.split("id=")[1].split("&")[0];
-            if(splitedStringOcurrence == index.id_materia){     
+            if(splitedStringOcurrence == index.id_materia && index.id_anotacoes == storageIdAnotacoes){   
                 title.innerHTML = index.assunto_anotacoes;          
                 anotacoes.innerHTML = index.anotacoes;
             }
