@@ -15,6 +15,7 @@
             $insert->bindValue(":anotacoes", $anotacoes);
             $insert->bindValue(":id_materia", $id);
             $insert->execute();
+            echo "alert('Anotação criada com sucesso');";
             header("Location: ../view/topicos-materia.php?id=".$id_materia['id_materia']);
         }
        

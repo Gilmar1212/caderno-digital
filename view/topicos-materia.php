@@ -61,11 +61,21 @@ ajax.onreadystatechange = ()=>{
                     console.log(id);
                    localStorage.setItem("id_anotacoes",id);
                 })
+                let altTopic = document.createElement("a");
+                altTopic.setAttribute("href", "../model/altera-anotacoes.php?id="+index.id_anotacoes);
+                iAlt = document.createElement("i");
+                iAlt.setAttribute("class","fa-solid fa-pencil");
+                altTopic.append(iAlt);
                 topic.innerHTML = index.assunto_anotacoes;
                 deletar.append(i);
-                topic.classList.add("materias-flex");
-            topic.append(deletar);
-                anotacoes.appendChild(topic);
+                let div = document.createElement("div");
+                div.classList.add("materias-flex");
+                let container =  document.createElement("div");
+                container.append(deletar);
+                container.append(altTopic);
+            div.append(topic);
+            div.append(container);
+                anotacoes.appendChild(div);
             }
         })
 

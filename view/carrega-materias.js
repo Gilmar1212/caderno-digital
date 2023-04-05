@@ -25,12 +25,20 @@ ajax.onreadystatechange = ()=>{
                 localStorage.setItem("id",a.getAttribute("href"));
                 localStorage.getItem("id");
             })
-            // localStorage.setItem("id",a.getA )
+            let altTopic = document.createElement("a");
+            altTopic.setAttribute("href", "./model/alterar-materia.php?id="+index.id_materia);
             a.classList.add("materias-flex");
             a.innerHTML = index.materias;
             deletar.append(i);
-            a.append(deletar);
-            teste.appendChild(a);
+            let div = document.createElement("div");
+            div.classList.add("materias-flex");
+            let iAlt = document.createElement("i");
+            iAlt.setAttribute("class","fa-solid fa-pencil");
+            altTopic.append(iAlt);
+            div.appendChild(a);
+            div.append(deletar);
+            div.appendChild(altTopic );
+            teste.appendChild(div);
         })
     }
 }
