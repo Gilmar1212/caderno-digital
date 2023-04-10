@@ -12,7 +12,7 @@ ajax.onreadystatechange = ()=>{
             deletar.addEventListener("click",(e)=>{
                let confirm = window.confirm("você deseja realmente deletar ?");
                if(confirm == true){
-                    window.location.href ="model/deleta-materia-anotacao?id="+index.id_materia;
+                    window.location.href ="model/deleta-materia-anotacao.php?id="+index.id_materia;
                     alert("Materia apagada com sucesso");
                }
             })

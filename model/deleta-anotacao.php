@@ -1,10 +1,9 @@
 <?php 
-    include_once("../connect.php");
+    include("../connect.php");
+    include("fetch-query.php");
     try{
         $id = filter_input(INPUT_GET,"id");
-
-        $query_anotacoes = $conn->query("SELECT * FROM tbl_anotacoes");
-        $fetch_id_anotacoes = $query_anotacoes->fetchAll();
+        $fetch_id_anotacoes = fetch_query($conn->query("SELECT * FROM tbl_anotacoes"));
         $delete_anotacoes = $conn;
         foreach($fetch_id_anotacoes as $fetch=> $id_anotacoes){
             var_dump($id);

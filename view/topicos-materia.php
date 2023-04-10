@@ -1,5 +1,5 @@
 <?php
- $id = filter_input(INPUT_GET, "id");
+$id = filter_input(INPUT_GET, "id");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -15,76 +15,12 @@
     <a href="../index.php" title="Voltar" class="voltar"><i class="fa-solid fa-arrow-left"></i></a>  
     <h1></h1>
     <form method="POST" action="../model/cria-anotacoes.php?id=<?=$id?>">
-    <input type="text" name="assunto-materia" placeholder="ASSUNTO DA MATÉRIA EX: ARTE É LEGAL..." required>
-    <textarea name="anotacoes" id="anotacoes" cols="120" rows="20" value="anotacoes" placeholder="DIGITE O CORPO DO ASSUNTO AQUI!" required></textarea>
-    <input type="submit">
+        <input type="text" name="assunto-materia" placeholder="ASSUNTO DA MATÉRIA EX: ARTE É LEGAL..." required>
+        <textarea name="anotacoes" id="anotacoes" cols="120" rows="20" value="anotacoes" placeholder="DIGITE O CORPO DO ASSUNTO AQUI!" required></textarea>
+        <input type="submit">
     </form>
     <h2>Acesse as suas anotações abaixo:</h2>
     <div class="anotacoes--content"></div>
 </body>
+<script type="module" src="../view/view-materia-construct.js"></script>
 </html>
-<script>
-var ajax = new XMLHttpRequest();
-var anotacoes = document.querySelector(".anotacoes--content");
-var title = document.querySelector("h1");
-let storageName =localStorage.getItem("id");
-let titleName = storageName.split("id=")[1].split("&")[1].split("=")[1];
-title.innerHTML ="Materia: "+titleName;
-
-ajax.onreadystatechange = ()=>{
-    if(ajax.readyState == 4 && ajax.status == 200){
-        var json = JSON.parse(ajax.responseText);
-        json.forEach((index)=>{     
-            
-            let storage =localStorage.getItem("id");
-            let splitedStringOcurrence = storage.split("id=")[1].split("&")[0];
-            if(splitedStringOcurrence == index.id_materia){       
-                let deletar = document.createElement("a");
-            deletar.setAttribute("href","#");
-            deletar.setAttribute("title","Deletar");
-            deletar.addEventListener("click",(e)=>{
-               let confirm = window.confirm("você deseja realmente deletar ?");
-               if(confirm == true){
-                    window.location.href ="../model/deleta-anotacao?id="+index.id_anotacoes;
-                    console.log(splitedStringOcurrence);
-                    alert("Materia apagada com sucesso");
-               }
-            })
-            let i = document.createElement("i");
-            
-            i.setAttribute("class", "fa-solid fa-trash");            
-                let topic = document.createElement("a");
-                topic.setAttribute("href", "carrega-anotacoes.php?id="+index.id_anotacoes);
-                topic.addEventListener("click",(e)=>{
-                    e.preventDefault;
-                    let id = topic.getAttribute("href").split("?")[1].split("=")[1];
-                    console.log(id);
-                   localStorage.setItem("id_anotacoes",id);
-                })
-                let altTopic = document.createElement("a");
-                altTopic.setAttribute("href", "../model/altera-anotacoes.php?id="+index.id_anotacoes);
-                iAlt = document.createElement("i");
-                iAlt.setAttribute("class","fa-solid fa-pencil");
-                altTopic.append(iAlt);
-                topic.innerHTML = index.assunto_anotacoes;
-                deletar.append(i);
-                let div = document.createElement("div");
-                div.classList.add("materias-flex");
-                let container =  document.createElement("div");
-                container.append(deletar);
-                container.append(altTopic);
-            div.append(topic);
-            div.append(container);
-                anotacoes.appendChild(div);
-            }
-        })
-
-    }
-}
-var urlCatch = window.location.href;
-var urlSplit = urlCatch.split("/");
-var url= urlSplit[3]
-ajax.open("POST","http://localhost/"+url+"/model/cria-json-anotacoes.php",true);
-ajax.send();
-</script>
-
