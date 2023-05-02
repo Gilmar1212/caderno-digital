@@ -27,7 +27,7 @@ ajax.onreadystatechange = ()=>{
             })
             let altTopic = document.createElement("a");
             altTopic.setAttribute("href", "./model/alterar-materia.php?id="+index.id_materia);
-            a.classList.add("materias-flex");
+            a.classList.add("materias-link");
             a.innerHTML = index.materias;
             deletar.append(i);
             let div = document.createElement("div");

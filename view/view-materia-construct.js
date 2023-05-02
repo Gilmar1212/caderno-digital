@@ -12,12 +12,11 @@
 				
 
 				let container_crud = document.createElement("div");
-				let container =  document.createElement("div");
 				container_crud.classList.add("materias-flex");
 				var anotacoes = document.querySelector(".anotacoes--content");
 
 				let loadTopic = document.createElement("a");
-
+                loadTopic.classList.add("materias-link");
 				let iDelete = document.createElement("i");
 				let deleteAnotation = document.createElement("a");
 				iDelete.setAttribute("class", "fa-solid fa-trash");  
@@ -57,11 +56,11 @@
                     altTopic.append(iAlt);
                     loadTopic.innerHTML = index.assunto_anotacoes;
                     deleteAnotation.append(iDelete);
-                    
-                    container.append(deleteAnotation);
-                    container.append(altTopic);
+
                     container_crud.append(loadTopic);
-                    container_crud.append(container);
+                    container_crud.append(deleteAnotation);
+                    container_crud.append(altTopic);
+                   
                     anotacoes.appendChild(container_crud);
                 }
             })

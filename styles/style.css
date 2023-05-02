@@ -43,7 +43,7 @@ form input[type="submit"]:hover{
     display:flex;
     flex-direction: column;
     overflow-y:scroll;
-    height:200px;
+    height:217px;
 }
 .wrapper{
     width:100%;
@@ -87,4 +87,12 @@ a:hover{
     background-color: white;
     width: 100%;
     margin: 5px 0px;
+}
+.materias-flex:hover{
+    background-color:black;
+    color:white;
+}
+.materias-link{font-weight:600; width: 100%; background-color: transparent !important;}
+.materias-flex:hover .materias-link{
+    color:white;
 }
