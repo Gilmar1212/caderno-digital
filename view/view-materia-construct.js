@@ -70,7 +70,7 @@
     var urlCatch = window.location.href;
     var urlSplit = urlCatch.split("/");
     var url= urlSplit[3]
-    ajax.open("POST","http://localhost/"+url+"/model/cria-json-anotacoes.php",true);
+    ajax.open("POST","localhost/model/cria-json-anotacoes.php",true);
     ajax.send();
 
 

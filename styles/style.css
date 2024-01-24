@@ -19,6 +19,14 @@ form{
     display:flex;
     flex-direction: column;
 }
+header form{
+    display: flex;
+    justify-content: flex-end;
+}
+header form input{
+    width:20%;
+    margin:0 5px;
+}
 form input, textarea {
     width:100%;
     margin:10px 0;
@@ -65,7 +73,6 @@ a {
     color: black;
     background-color:white;
     font-size: 26px;
-    line-height: 50px;
     font-weight: 700;
     transition: 0.5s;
     padding: 15px;
@@ -73,6 +80,22 @@ a {
     border-radius: 10px;
 }
 a:hover{
+    background-color:black;
+    color:white;
+}
+
+.btn {
+    text-decoration: none;
+    color: black;
+    background-color:white;
+    font-size: 16px;
+    padding:15px;
+    font-weight: 700;
+    transition: 0.5s;
+    padding: 5px;
+    border-radius: 10px;
+}
+.btn:hover{
     background-color:black;
     color:white;
 }

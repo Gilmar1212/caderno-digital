@@ -4,6 +4,7 @@ var teste = document.querySelector(".materias");
 ajax.onreadystatechange = ()=>{
     if(ajax.readyState == 4 && ajax.status == 200){
         let json = JSON.parse(ajax.responseText);
+            
         json.forEach((index)=>{
             let a = document.createElement("a");
             let deletar = document.createElement("a");
@@ -45,5 +46,5 @@ ajax.onreadystatechange = ()=>{
 var urlCatch = window.location.href;
 var urlSplit = urlCatch.split("/");
 var url= urlSplit[3]
-ajax.open("POST","http://localhost/"+url+"/model/cria-json-materias.php",true);
+ajax.open("POST","model/cria-json-materias.php",true);
 ajax.send();
